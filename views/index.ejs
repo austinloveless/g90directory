@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+    <h1>hello</h1>
+    <% student.forEach(student => { %>
+        <li>
+            <%= student.first_name %> -
+                <%= student.last_name %>
+                    <br>
+                    <%= student.prev_occupation %>
+                        <br>
+                        <%= student.hometown_lat%> -
+                            <%= student.hometown_long %>
+        </li>
+
+        <img src="<%= student.photo %>" alt="">
+        <!-- <a href="/students/<%=student.id%>/edit">Edit This Student</a> -->
+        <a href="/students/<%=student.id%>">View Student </a>
+        <% }) %>
+
+            <% include ./partials/footer %>

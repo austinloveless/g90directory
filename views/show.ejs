@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+    <h1>hello</h1>
+    <li>
+        <%= student.first_name %> -
+            <%= student.last_name %>
+                <br>
+                <%= student.prev_occupation %>
+                    <br>
+                    <%= student.hometown_lat%> -
+                        <%= student.hometown_long %>
+    </li>
+
+    <img src="<%= student.photo %>" alt="">
+    <!-- <a href="/students/<%=student.id%>/edit">Edit This Student</a> -->
+    <a href="/students/<%=student.id%>/edit">
+        <button> Edit
+            <%=student.name%>
+        </button>
+    </a>
+    <form action="/students/<%=student.id%>?_method=delete" method="post">
+        <button>Delete
+            <%=student.name%>
+        </button>
+    </form>
+
+    <% include ./partials/footer %>
